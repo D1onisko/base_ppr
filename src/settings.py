@@ -1,6 +1,5 @@
 import os
 
-
 location = lambda x: os.path.join(
     os.path.dirname(os.path.realpath(__file__)), x)
 
@@ -71,6 +70,7 @@ STATICFILES_FINDERS = (
 # ======================================================================================================================
 #                                 TEMPLATES
 # ======================================================================================================================
+TEMPLATE_DIRS = (location('templates'),)
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
