@@ -104,6 +104,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
 
+    'src.apps.base_ppr',
+
 
 ]
 
