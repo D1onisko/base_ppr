@@ -108,7 +108,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
 
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
 
 
 )
