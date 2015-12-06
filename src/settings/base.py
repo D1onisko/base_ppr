@@ -125,21 +125,7 @@ EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
 DEFAULT_FROM_EMAIL = 'info@google.ru'
 
-#EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-#EMAIL_FILE_PATH = (os.path.join(os.path.dirname(__file__), '../mail'))
 
 # ----------------------------------------------------------------------------------------------------------------------
 #                                    ElasticSearch
 # ----------------------------------------------------------------------------------------------------------------------
-
-HAYSTACK_CONNECTIONS = {
-    'default': {
-        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
-        'URL': 'http://127.0.0.1:9200/',
-        'INDEX_NAME': 'haystack',
-    },
-}
-
-HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
-HAYSTACK_SEARCH_RESULTS_PER_PAGE = 2
-HAYSTACK_CUSTOM_HIGHLIGHTER = 'src.app.search.utils.BorkHighligher'
