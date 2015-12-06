@@ -1,7 +1,6 @@
 import os
 
-location = lambda x: os.path.join(
-    os.path.dirname(os.path.realpath(__file__)), x)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 ROOT_URLCONF = 'src.urls'
 
@@ -12,10 +11,6 @@ TEMPLATE_DEBUG = True
 SQL_DEBUG = True
 
 SECRET_KEY = '$)a7n&o80u!6y5t-+jrd3)3!%vh&shg$wqpjpxc!ar&p#!)n1a'
-
-def rel_project(*x):
-    return os.path.join(os.path.abspath(os.path.dirname(__file__)), *x)
-
 
 # =====================================================================================================================
 #                           DATABASES
@@ -53,14 +48,14 @@ LANGUAGES = (
 # ======================================================================================================================
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
-MEDIA_ROOT = location("public/media")
+MEDIA_ROOT = 'public/media'
 
 MEDIA_URL = '/media/'
 
 STATIC_URL = '/static/'
-STATIC_ROOT = location('public/static')
+STATIC_ROOT = 'public/static'
 STATICFILES_DIRS = (
-    location('static/'),
+    os.path.join(BASE_DIR, 'static'),
 )
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -70,7 +65,7 @@ STATICFILES_FINDERS = (
 # ======================================================================================================================
 #                                 TEMPLATES
 # ======================================================================================================================
-TEMPLATE_DIRS = (location('templates'),)
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
