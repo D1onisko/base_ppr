@@ -128,8 +128,8 @@ EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
 DEFAULT_FROM_EMAIL = 'info@google.ru'
 
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = (os.path.join(os.path.dirname(__file__), '../mail'))
+#EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+#EMAIL_FILE_PATH = (os.path.join(os.path.dirname(__file__), '../mail'))
 
 # ----------------------------------------------------------------------------------------------------------------------
 #                                    ElasticSearch
