@@ -1,11 +1,9 @@
 import os
 import psycopg2
 import urlparse
-from django.conf import settings
 
 DEBUG = False
 TEMPLATE_DEBUG = True
-DATABASES = settings.DATABASES
 
 urlparse.uses_netloc.append("postgres")
 url = urlparse.urlparse(os.environ["DATABASE_URL"])

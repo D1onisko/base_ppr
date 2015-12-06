@@ -23,7 +23,7 @@ DATABASES = {
         'NAME': 'ppr',
         'USER': 'd1onis',
         'PASSWORD': '',
-        'HOST': '127.0.0.4',
+        'HOST': '127.0.0.1',
         'PORT': '',
     }
 }
