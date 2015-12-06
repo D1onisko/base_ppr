@@ -16,6 +16,8 @@ SECRET_KEY = '$)a7n&o80u!6y5t-+jrd3)3!%vh&shg$wqpjpxc!ar&p#!)n1a'
 # =====================================================================================================================
 #                           DATABASES
 # =====================================================================================================================
+"""
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -37,7 +39,6 @@ DATABASES = {
         'PORT': '',
     }
 }
-"""
 
 # =====================================================================================================================
 #                          LANGUAGE_CODE / TIME_ZONE
@@ -102,12 +103,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
+    'flat',
     'django.contrib.admin',
     'django.contrib.flatpages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
 
+    'mptt',
+    'django_mptt_admin',
+    'autoslug',
+
+
+
     'src.apps.base_ppr',
+    'src.apps.deviation',
+    'src.apps.offer',
 
 
 ]

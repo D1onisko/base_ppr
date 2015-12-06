@@ -89,12 +89,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
+    'flat',
     'django.contrib.admin',
     'django.contrib.flatpages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
 
+    'mptt',
+    'django_mptt_admin',
+    'autoslug',
+
     'src.apps.base_ppr',
+    'src.apps.deviation',
+    'src.apps.offer',
 
 
 ]
