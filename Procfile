@@ -1,1 +1,1 @@
-web: gunicorn ppr.wsgi
+web: gunicorn src.wsgi

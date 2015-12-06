@@ -1,6 +1,7 @@
+# local setting
 import os
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 ROOT_URLCONF = 'src.urls'
 
@@ -15,6 +16,7 @@ SECRET_KEY = '$)a7n&o80u!6y5t-+jrd3)3!%vh&shg$wqpjpxc!ar&p#!)n1a'
 # =====================================================================================================================
 #                           DATABASES
 # =====================================================================================================================
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -36,12 +38,6 @@ SITE_ID = 1
 USE_I18N = True
 USE_L10N = True
 
-gettext_noop = lambda s: s
-LANGUAGES = (
-    ('en-gb', gettext_noop('British English')),
-    ('ru', gettext_noop('Russian')),
-    ('uk', gettext_noop('Ukrainian')),
-)
 
 # ======================================================================================================================
 #                               STATIC / MEDIA
