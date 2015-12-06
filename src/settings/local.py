@@ -20,11 +20,11 @@ SECRET_KEY = '$)a7n&o80u!6y5t-+jrd3)3!%vh&shg$wqpjpxc!ar&p#!)n1a'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ppr',
-        'USER': 'd1onis',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'PORT': '',
+        'NAME': 'd37emredhfh216',
+        'USER': 'xujyoxfwjwzvob',
+        'PASSWORD': 'KyDvf--kZhJ8jmeyFjdEI_wL72',
+        'HOST': 'ec2-54-83-203-50.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 # =====================================================================================================================
