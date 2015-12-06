@@ -1,1 +1,1 @@
-web: gunicorn ppr.wsgi --log-file -
+web: gunicorn src.wsgi --log-file -
