@@ -11,11 +11,19 @@ class CategoryAdmin(DjangoMpttAdmin):
     mptt_level_indent = 20
 
 
-class ItemAdmin(admin.ModelAdmin):
+class ActionAdmin(admin.ModelAdmin):
     date_hierarchy = 'date_created'
     list_display = ('title', 'category', 'date_created', 'date_updated', 'user_name',)
-    list_filter = ['is_discountable', 'user_name']
+    list_filter = ['category']
     search_fields = ['title']
 
+
+class ActionHistoryAdmin(admin.ModelAdmin):
+    date_hierarchy = 'date_created'
+    list_display = ('title', 'action', 'date_created', 'date_updated', 'user_name',)
+    list_filter = ['user_name']
+    search_fields = ['title']
+
+admin.site.register(models.ActionHistory, ActionHistoryAdmin)
 admin.site.register(models.Category, CategoryAdmin)
-admin.site.register(models.Item, ItemAdmin)
+admin.site.register(models.Action, ActionAdmin)

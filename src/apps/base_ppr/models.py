@@ -31,8 +31,8 @@ class Category(MPTTModel):
 
     class Meta:
         ordering = ['-date_created']
-        verbose_name = _('Category')
-        verbose_name_plural = _('Categories')
+        verbose_name = _(u'Категория')
+        verbose_name_plural = _(u'Категория')
 
     class MPTTMeta:
         order_insertion_by = ['name']
@@ -49,15 +49,14 @@ class Category(MPTTModel):
 mptt.register(Category)
 
 @python_2_unicode_compatible
-class Item(models.Model):
+class Action(models.Model):
     """
     Описание модели
     """
     category = TreeForeignKey(Category, verbose_name=_('Category'), related_name=u'entries',)
     user_name = models.ForeignKey(User, related_name='+', to_field=u'username')
-    title = models.CharField(_('Product title'), max_length=255)
-    slug = AutoSlugField(populate_from='title', slugify=custom_slugify, unique=False)
-    priority = models.IntegerField(verbose_name=_('Price'))
+    title = models.CharField(_('Action title'), max_length=255)
+    priority = models.IntegerField(verbose_name=_('Priory'))
     description = models.TextField(_('Description'), max_length=255)
     date_created = models.DateTimeField(_("Date created"), auto_now_add=True)
     date_updated = models.DateTimeField(_("Date updated"), auto_now=True, db_index=True)
@@ -65,8 +64,38 @@ class Item(models.Model):
 
     class Meta:
         ordering = ['-date_created']
-        verbose_name = _('Item')
-        verbose_name_plural = _('Items')
+        verbose_name = _(u'')
+        verbose_name_plural = _(u'Активность')
+
+    def __str__(self):
+        if self.title:
+            return self.title
+
+    def get_absolute_url(self):
+        return reverse('base_ppr:item_detail', args=[str(self.pk)])
+
+    objects = models.Manager()
+
+@python_2_unicode_compatible
+class ActionHistory(models.Model):
+    """
+    Описание модели
+    """
+    action = models.ForeignKey(Action, verbose_name=_('Action'), related_name=u'entries',)
+    user_name = models.ForeignKey(User, related_name='+', to_field=u'username')
+    title = models.CharField(_('Actionhistory title'), max_length=255)
+    description = models.TextField(_('Description'), max_length=255)
+    comment = models.TextField(_('Comment'), max_length=255)
+    date_created = models.DateTimeField(_("Date created"), auto_now_add=True)
+    date_updated = models.DateTimeField(_("Date updated"), auto_now=True, db_index=True)
+
+    class Meta:
+        ordering = ['-date_created']
+        verbose_name = _(u'')
+        verbose_name_plural = _(u'История')
+
+    class MPTTMeta:
+        order_insertion_by = ['title']
 
     def __str__(self):
         if self.title:
