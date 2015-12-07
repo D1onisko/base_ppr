@@ -14,14 +14,14 @@ class CategoryAdmin(DjangoMpttAdmin):
 class ActionAdmin(admin.ModelAdmin):
     date_hierarchy = 'date_created'
     list_display = ('title', 'category', 'date_created', 'date_updated', 'user_name',)
-    list_filter = ['category']
+    list_filter = ['category', 'date_created', 'user_name']
     search_fields = ['title']
 
 
 class ActionHistoryAdmin(admin.ModelAdmin):
     date_hierarchy = 'date_created'
     list_display = ('title', 'action', 'date_created', 'date_updated', 'user_name',)
-    list_filter = ['user_name']
+    list_filter = ['user_name', 'date_created',]
     search_fields = ['title']
 
 admin.site.register(models.ActionHistory, ActionHistoryAdmin)
