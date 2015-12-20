@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+
+        <h2 class="col-lg-push-7">Личный кабинет  {{ user.username }} 'a</h2>
+        <a href="{% url 'dashboard:effect_log_write' %}">Добавить запись</a>
+
+
+        {% include "apps/dashboard/log_in_dashboard.html" %}
+
+    {% endif %}
+
+{% endblock %}
+

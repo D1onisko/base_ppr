@@ -4,6 +4,10 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/', include('registration.backends.default.urls')),
 
-    url(r'^', include('src.apps.base_ppr.urls', namespace='base_ppr')),
+    url(r'^effect_log/', include('src.apps.effect_log.urls', namespace='effect_log')),
+    url(r'^dashboard/', include('src.apps.dashboard.urls', namespace='dashboard')),
+    url(r'^', include('src.apps.core.urls', namespace='core')),
+
 ]

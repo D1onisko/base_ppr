@@ -1,0 +1,35 @@
+{% extends "base_effect.html" %}
+{% load i18n static %}
+
+{% block content %}
+    <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Дата внесения лога</th>
+                  <th>Оператор</th>
+                  <th>Тип простоя</th>
+                  <th>Время фиксации простоя</th>
+                  <th>Длительность простоя</th>
+                  <th>Комментарии оператора</th>
+                  <th>Ф.И.О</th>
+                </tr>
+              </thead>
+              <tbody>
+     {% for log_vivod in object_list %}
+<tr>
+
+      {% include "apps/effect_log/effect_log.html" %}
+
+</tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+
+
+
+
+{% endblock %}

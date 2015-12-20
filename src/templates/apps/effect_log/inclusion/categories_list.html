@@ -1,0 +1,18 @@
+{% load i18n static %}
+{% load mptt_tags %}
+
+
+
+{% full_tree_for_model effect_log.Category as categories  %}
+{% for node,structure in categories|tree_info %}
+
+    {% if structure.new_level %}<ul class="nav nav-sidebar"><li>{% endif %}
+    {% ifequal node categories %}
+        <a class="" href="/effect_log/{{ node.slug }}/">{{ node.name }}</a>
+    {% else %}
+        <a class="" href="/effect_log/{{ node.slug }}/">{{ node.name }}</a>
+        {% ifequal node.parent_id categories.pk %}{% endifequal %}
+    {% endifequal %}
+    {% for level in structure.closed_levels %}</li></ul>{% endfor %}
+{% endfor %}
+

@@ -2,7 +2,6 @@
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
 ROOT_URLCONF = 'src.urls'
 
 WSGI_APPLICATION = 'src.wsgi.application'
@@ -16,6 +15,7 @@ SECRET_KEY = '$)a7n&o80u!6y5t-+jrd3)3!%vh&shg$wqpjpxc!ar&p#!)n1a'
 # =====================================================================================================================
 #                           DATABASES
 # =====================================================================================================================
+"""
 
 DATABASES = {
     'default': {
@@ -31,14 +31,13 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ppr',
+        'NAME': 'log',
         'USER': 'd1onis',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '',
     }
 }
-"""
 
 # =====================================================================================================================
 #                          LANGUAGE_CODE / TIME_ZONE
@@ -46,7 +45,7 @@ DATABASES = {
 TIME_ZONE = 'Europe/London'
 USE_TZ = True
 
-LANGUAGE_CODE = 'en-gb'
+LANGUAGE_CODE = 'ru-ru'
 SITE_ID = 1
 USE_I18N = True
 USE_L10N = True
@@ -112,12 +111,13 @@ INSTALLED_APPS = [
     'mptt',
     'django_mptt_admin',
     'autoslug',
+    'crispy_forms',
 
 
-
-    'src.apps.base_ppr',
-    'src.apps.deviation',
-    'src.apps.offer',
+    'src',
+    'src.apps.core',
+    'src.apps.effect_log',
+    'src.apps.dashboard',
 
 
 ]

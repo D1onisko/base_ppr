@@ -6,5 +6,5 @@ from django.shortcuts import get_object_or_404, redirect
 """
 Index page
 """
-class IndexView(TemplateView):
-    template_name = 'base.html'
+class CoreIndexView(TemplateView):
+    template_name = 'apps/core/index.html'
